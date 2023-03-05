@@ -24,6 +24,7 @@ def summarize(text):
             {"role": "user", "content": f"下記のチャットログを箇条書きで要約してください。。1行ずつの説明ではありません。全体として短く。\n\n{text}"}
         ]
     )
+    print("openai API called")
     return response["choices"][0]["message"]['content']
 
 
@@ -168,7 +169,8 @@ for channel in channels:
     messages = load_messages(channel["id"])
     if messages != None:
         text = summarize(messages)
-        print("sleep now")
+        now = datetime.datetime.now()
+        print("sleep now: ", now)
         time.sleep(4)
         result_text.append(f"----\n<#{channel['id']}>\n{text}")
 
