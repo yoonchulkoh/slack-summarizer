@@ -168,7 +168,8 @@ for channel in channels:
     messages = load_messages(channel["id"])
     if messages != None:
         text = summarize(messages)
-        time.sleep(3)
+        print("sleep now")
+        time.sleep(4)
         result_text.append(f"----\n<#{channel['id']}>\n{text}")
 
 title = (f"{yesterday.strftime('%Y-%m-%d')}のpublic channelの要約")
