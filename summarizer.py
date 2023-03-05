@@ -169,7 +169,7 @@ for channel in channels:
     messages = load_messages(channel["id"])
     if messages != None:
         text = summarize(messages)
-        now = datetime.datetime.now()
+        now = datetime.now(JST)
         print("sleep now: ", now)
         time.sleep(4)
         result_text.append(f"----\n<#{channel['id']}>\n{text}")
